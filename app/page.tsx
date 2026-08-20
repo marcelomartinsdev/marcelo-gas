@@ -11,6 +11,7 @@ import {
   Navigation,
 } from "lucide-react";
 import FAQList from "@/components/FAQList";
+import RouteJourney from "@/components/RouteJourney";
 import Logo from "@/components/ui/Logo";
 import WhatsAppLink from "@/components/ui/WhatsAppLink";
 import { site, siteUrl, whatsappMessages } from "@/data/site";
@@ -183,23 +184,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="route-story">
+        <section className="route-story" id="rota">
           <div className="route-story-grid section-shell">
             <div className="route-copy">
               <span className="section-index light">04 — ROTA</span>
               <h2>Do pedido no WhatsApp<br /><em>à sua casa.</em></h2>
               <p>Você envia o endereço. A equipe confirma as informações da entrega diretamente na conversa.</p>
             </div>
-            <div className="route-map" aria-label="Ilustração da rota entre o Marcelo Gás e a casa do cliente">
-              <svg viewBox="0 0 900 420" role="img" aria-label="Rota ilustrada entre o Marcelo Gás e a casa do cliente">
-                <title>Rota ilustrada entre o Marcelo Gás e a casa do cliente</title>
-                <path className="route-shadow" d="M45 325C176 337 180 92 340 128s214 246 365 150 78-239 163-235" />
-                <path className="route-line" d="M45 325C176 337 180 92 340 128s214 246 365 150 78-239 163-235" />
-              </svg>
-              <div className="route-point route-origin"><i /><span>Marcelo Gás</span><small>Rua Um, 121</small></div>
-              <div className="route-bike"><BikeMini /></div>
-              <div className="route-point route-destination"><i /><span>Sua casa</span><small>Endereço a confirmar</small></div>
-            </div>
+            <RouteJourney />
           </div>
         </section>
 
@@ -287,16 +279,5 @@ export default function Home() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness).replace(/</g, "\\u003c") }} />
     </>
-  );
-}
-
-function BikeMini() {
-  return (
-    <svg viewBox="0 0 110 58" aria-hidden="true">
-      <circle cx="25" cy="45" r="12" /><circle cx="84" cy="45" r="12" />
-      <path d="M25 45h23l14-20h14l8 20M48 45l-8-24h22" />
-      <path className="bike-mini-body" d="m43 40 11-22h22l10 21-22 5Z" />
-      <path d="M61 20c1-11 8-17 18-15 9 2 14 9 13 18-13 4-23 3-31-3Z" />
-    </svg>
   );
 }
