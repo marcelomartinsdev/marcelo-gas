@@ -100,6 +100,15 @@ export default function Home() {
             <p>SEM VOLTA. SEM FORMULÁRIO.</p>
             <h2>Seu gás.<br />Um pedido.<br /><em>Direto.</em></h2>
           </div>
+          <figure className="flow-proof">
+            <Image
+              src="/images/patio4.webp"
+              alt="Profissional conferindo botijões no pátio do Marcelo Gás"
+              fill
+              sizes="(max-width: 760px) calc(100vw - 36px), 40vw"
+            />
+            <figcaption><span>OPERAÇÃO REAL</span><strong>Seu pedido parte daqui.</strong></figcaption>
+          </figure>
           <div className="flow-steps">
             <div><span>01</span><strong>Chame</strong><p>Abra o WhatsApp em qualquer botão do site.</p></div>
             <div><span>02</span><strong>Envie seu endereço</strong><p>Informe onde você está em Poções.</p></div>
