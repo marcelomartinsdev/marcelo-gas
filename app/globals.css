@@ -355,7 +355,12 @@ img { max-width: 100%; }
 
 /* Gas do Povo */
 .people-gas { position: relative; overflow: hidden; color: white; background: #111; }
-.people-gas-band { white-space: nowrap; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.56); font-family: Arial, sans-serif; font-size: .63rem; font-weight: 900; letter-spacing: .32em; word-spacing: 1.5rem; }
+.people-gas-band { position:relative; overflow:hidden; border-bottom:1px solid rgba(255,255,255,.16); color:rgba(255,255,255,.62); font-family:Arial,sans-serif; font-size:.63rem; font-weight:900; letter-spacing:.32em; -webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent); mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent); }
+.people-gas-track { display:flex; width:max-content; transform:translate3d(0,0,0); animation:people-gas-marquee 24s linear infinite; will-change:transform; }
+.people-gas-sequence { flex:none; width:max(100vw,960px); display:flex; align-items:center; justify-content:space-around; padding:1rem clamp(18px,2.5vw,48px); }
+.people-gas-sequence span { display:inline-flex; align-items:center; white-space:nowrap; }
+.people-gas-sequence span::after { content:"•"; margin-left:clamp(2rem,3vw,4rem); color:var(--orange); }
+@keyframes people-gas-marquee { to { transform:translate3d(-50%,0,0); } }
 .people-gas-inner { min-height: 720px; display: grid; grid-template-columns: 1fr 1.02fr; align-items: center; gap: 7vw; padding-block: 90px; }
 .people-gas-wordmark { position: relative; display: grid; align-content: center; min-height: 470px; padding: 3.3rem; border: 2px solid white; background: #080808; }
 .people-gas-wordmark::before,.people-gas-wordmark::after { content:""; position:absolute; width: 92px; height: 2px; background:#fff; }
@@ -551,6 +556,10 @@ img { max-width: 100%; }
   .flow-steps strong { font-size:1.2rem; }
   .flow-steps p { font-size:.9rem; }
   .flow-cta { width:100%; margin:2rem 0 0; }
+  .people-gas-band { font-size:.58rem; letter-spacing:.25em; }
+  .people-gas-track { animation-duration:18s; }
+  .people-gas-sequence { width:720px; padding:.9rem 18px; }
+  .people-gas-sequence span::after { margin-left:1.8rem; }
   .people-gas-inner { min-height:0; grid-template-columns:1fr; gap:65px; padding-block:74px 90px; }
   .people-gas-wordmark { min-height:330px; padding:1.6rem; }
   .people-gas-wordmark strong { font-size:clamp(3.8rem,20vw,6rem); }
@@ -636,6 +645,11 @@ img { max-width: 100%; }
   html { scroll-behavior:auto; }
   *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; }
   .hero-orbit-one,.route-line { animation:none; }
+  .people-gas-band { -webkit-mask-image:none; mask-image:none; }
+  .people-gas-track { width:100%; transform:none; animation:none; will-change:auto; }
+  .people-gas-sequence { width:100%; min-width:0; justify-content:space-evenly; }
+  .people-gas-sequence + .people-gas-sequence { display:none; }
+  .people-gas-sequence span::after { display:none; }
   html[data-motion="reduced"] .intro-city,
   html[data-motion="reduced"] .intro-route path,
   html[data-motion="reduced"] .intro-trail,
@@ -650,4 +664,9 @@ img { max-width: 100%; }
   @keyframes reduced-courier { to { transform:translate3d(58vw,-38%,0); } }
   @keyframes reduced-brand { to { opacity:1; transform:none; } }
   @keyframes reduced-wipe { to { opacity:1; transform:scale(3.6) rotate(7deg); } }
+}
+
+@media (max-width:760px) and (prefers-reduced-motion:reduce) {
+  .people-gas-sequence { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); justify-items:center; gap:.5rem; padding:.9rem 10px; }
+  .people-gas-sequence span:nth-child(n+3) { display:none; }
 }

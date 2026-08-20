@@ -15,6 +15,13 @@ import Logo from "@/components/ui/Logo";
 import WhatsAppLink from "@/components/ui/WhatsAppLink";
 import { site, siteUrl, whatsappMessages } from "@/data/site";
 
+const peopleGasBandLabels = [
+  "PROGRAMA SOCIAL",
+  "CONSULTA DIRETA",
+  "PROGRAMA SOCIAL",
+  "CONSULTA DIRETA",
+] as const;
+
 const localBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -120,7 +127,15 @@ export default function Home() {
         </section>
 
         <section className="people-gas" id="gas-do-povo">
-          <div className="people-gas-band" aria-hidden="true">PROGRAMA SOCIAL • CONSULTA DIRETA • PROGRAMA SOCIAL • CONSULTA DIRETA</div>
+          <div className="people-gas-band" aria-hidden="true">
+            <div className="people-gas-track">
+              {[0, 1].map((loop) => (
+                <div className="people-gas-sequence" key={loop}>
+                  {peopleGasBandLabels.map((label, index) => <span key={`${loop}-${index}`}>{label}</span>)}
+                </div>
+              ))}
+            </div>
+          </div>
           <div className="people-gas-inner section-shell">
             <div className="people-gas-wordmark">
               <small>ATENDIMENTO PELO PROGRAMA</small>
