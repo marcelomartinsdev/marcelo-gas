@@ -33,5 +33,5 @@ Os CTAs incluem contexto, UTM e `data-cta-location`. Nenhum identificador de Ana
 
 - WhatsApp: `+55 77 98142-5682`
 - Endereço: Rua Um, 121, Bairro São Paulo, Poções - BA, CEP 45264-304
-- Horário de atendimento não foi publicado porque ainda precisa de confirmação do negócio.
+- Horário de funcionamento: todos os dias, das 7h às 21h, de segunda a segunda, inclusive finais de semana.
 - A seção Gás do Povo segue a identificação tipográfica monocromática exigida pelo manual oficial durante o período eleitoral de 2026.

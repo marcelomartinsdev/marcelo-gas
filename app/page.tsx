@@ -3,12 +3,12 @@ import {
   ArrowDownRight,
   ArrowRight,
   Check,
+  Clock3,
   ExternalLink,
   Flame,
   MapPin,
   MessageCircle,
   Navigation,
-  ShieldCheck,
 } from "lucide-react";
 import FAQList from "@/components/FAQList";
 import Logo from "@/components/ui/Logo";
@@ -30,6 +30,12 @@ const localBusiness = {
     postalCode: site.address.postalCode,
     addressCountry: "BR",
   },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: site.hours.days,
+    opens: site.hours.opens,
+    closes: site.hours.closes,
+  },
 };
 
 export default function Home() {
@@ -46,7 +52,7 @@ export default function Home() {
               Chama o Marcelo.
             </h1>
             <p className="hero-lead">
-              Peça seu gás direto pelo WhatsApp e consulte o atendimento para o seu endereço em Poções.
+              Peça seu gás direto pelo WhatsApp, todos os dias, das 7h às 21h, e consulte o atendimento para o seu endereço em Poções.
             </p>
             <div className="hero-actions">
               <WhatsAppLink className="button button-primary" ctaLocation="hero">
@@ -84,7 +90,7 @@ export default function Home() {
         <section className="trust-rail" aria-label="Diferenciais confirmados">
           <div><MessageCircle size={20} /><span>Contato direto</span><strong>pelo WhatsApp</strong></div>
           <div><MapPin size={20} /><span>Atendimento local</span><strong>em Poções</strong></div>
-          <div><ShieldCheck size={20} /><span>Endereço físico</span><strong>informado</strong></div>
+          <div><Clock3 size={20} /><span>Aberto todos os dias</span><strong>das 7h às 21h</strong></div>
           <div><Flame size={20} /><span>Atendimento pelo</span><strong>Gás do Povo</strong></div>
         </section>
 
@@ -197,6 +203,10 @@ export default function Home() {
               <address>
                 Rua Um, 121<br />Bairro São Paulo<br />Poções - BA<br />CEP 45264-304
               </address>
+              <div className="location-hours">
+                <Clock3 size={21} aria-hidden="true" />
+                <span><strong>Horário de funcionamento</strong>{site.hours.display}<small>{site.hours.detail}</small></span>
+              </div>
               <div className="location-actions">
                 <a className="button button-white" href={site.mapsUrl} target="_blank" rel="noopener noreferrer">
                   <Navigation size={19} /> Abrir no Google Maps
@@ -246,7 +256,7 @@ export default function Home() {
       <footer className="site-footer">
         <Logo className="footer-logo" />
         <div><strong>Marcelo Gás</strong><p>{site.address.display}</p></div>
-        <div><strong>WhatsApp</strong><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></div>
+        <div className="footer-contact"><strong>WhatsApp</strong><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a><p>{site.hours.display}</p><small>{site.hours.detail}</small></div>
         <p className="government-note">Marcelo Gás é uma revenda privada participante do programa Gás do Povo e não é um órgão público. Regras e elegibilidade são definidas pelo Governo Federal.</p>
         <span>© {new Date().getFullYear()} Marcelo Gás</span>
       </footer>

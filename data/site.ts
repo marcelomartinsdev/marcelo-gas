@@ -7,6 +7,21 @@ export const site = {
   phoneDisplay: "(77) 98142-5682",
   phoneTel: "+5577981425682",
   whatsappNumber: "5577981425682",
+  hours: {
+    opens: "07:00",
+    closes: "21:00",
+    display: "Todos os dias, das 7h às 21h",
+    detail: "Segunda a segunda, inclusive finais de semana",
+    days: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+  },
   address: {
     street: "Rua Um, 121",
     neighborhood: "Bairro São Paulo",

@@ -10,6 +10,10 @@ const faqs = [
     "Rua Um, 121, Bairro São Paulo, Poções - BA, CEP 45264-304.",
   ],
   [
+    "Qual é o horário de funcionamento?",
+    "O Marcelo Gás funciona todos os dias, das 7h às 21h, de segunda a segunda, inclusive aos finais de semana.",
+  ],
+  [
     "O Marcelo Gás atende pelo Gás do Povo?",
     "Sim. Use o botão de consulta do Gás do Povo para falar diretamente pelo WhatsApp e conferir as informações do seu atendimento.",
   ],

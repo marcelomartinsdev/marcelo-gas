@@ -433,6 +433,11 @@ img { max-width: 100%; }
 .location h2 { margin:0; font-family:var(--font-display-stack); font-size:clamp(3.8rem,5.5vw,6.7rem); line-height:.85; letter-spacing:-.07em; }
 .location h2 em { color:var(--petrol); }
 .location address { margin:2rem 0; padding-left:1.25rem; color:var(--petrol-deep); border-left:2px solid var(--petrol); font-style:normal; font-size:1.05rem; font-weight:650; line-height:1.65; }
+.location-hours { display:flex; align-items:flex-start; gap:.8rem; width:fit-content; margin:-.25rem 0 2rem; padding:.9rem 1rem; color:var(--petrol-deep); background:rgba(255,255,255,.28); border:1px solid rgba(3,30,37,.2); }
+.location-hours svg { flex:0 0 auto; margin-top:.15rem; }
+.location-hours span { display:grid; gap:.18rem; line-height:1.35; }
+.location-hours strong { font-family:var(--font-display-stack); font-size:.83rem; letter-spacing:.04em; text-transform:uppercase; }
+.location-hours small { font-size:.72rem; font-weight:750; }
 .location-actions { display:flex; align-items:center; gap:1.2rem; }
 .location-link { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 0; color:var(--petrol-deep); border-bottom:1px solid var(--petrol); font-weight:900; }
 .map-wrap { position:relative; min-height:600px; padding:16px; background:var(--paper-light); box-shadow:22px 22px 0 var(--petrol); }
@@ -473,6 +478,8 @@ img { max-width: 100%; }
 .footer-logo { width:132px; height:60px; object-fit:contain; object-position:left center; }
 .site-footer strong { display:block; margin-bottom:.4rem; color:white; font-family:var(--font-display-stack); font-size:.9rem; }
 .site-footer p { margin:0; line-height:1.55; }
+.footer-contact p { margin-top:.75rem; color:white; font-weight:750; }
+.footer-contact small { display:block; margin-top:.15rem; color:#909d99; line-height:1.45; }
 .government-note { max-width:440px; }
 .site-footer > span { white-space:nowrap; }
 
